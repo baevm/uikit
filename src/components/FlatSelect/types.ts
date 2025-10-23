@@ -126,7 +126,9 @@ export type FlatSelectPropsInit<
     onOpen?: (isOpen: boolean) => void;
     isOpen?: boolean;
     listClassName?: string;
-    ignoreOutsideClicksRefs?: ReadonlyArray<React.RefObject<HTMLElement>>;
+    ignoreOutsideClicksRefs?: ReadonlyArray<
+      React.RefObject<HTMLElement | null>
+    >;
     clearButton?: boolean;
     iconClear?: IconComponent;
     iconLeft?: IconComponent;
@@ -135,7 +137,7 @@ export type FlatSelectPropsInit<
     footer?: React.ReactNode;
     view?: FieldPropView;
     bordered?: boolean;
-    anchorRef?: React.RefObject<HTMLElement>;
+    anchorRef?: React.RefObject<HTMLElement | null>;
     direction?: Direction;
     spareDirection?: Direction;
     possibleDirections?: Direction[];

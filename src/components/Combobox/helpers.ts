@@ -114,7 +114,9 @@ export type ComboboxProps<
     onSearchValueChange?: (value: string) => void;
     onDropdownOpen?: (isOpen: boolean) => void;
     dropdownOpen?: boolean;
-    ignoreOutsideClicksRefs?: ReadonlyArray<React.RefObject<HTMLElement>>;
+    ignoreOutsideClicksRefs?: ReadonlyArray<
+      React.RefObject<HTMLElement | null>
+    >;
   },
   HTMLDivElement
 > &

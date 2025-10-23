@@ -51,10 +51,8 @@ const getItemShowProgress = (item: Item) => item.progressMode;
 
 export const SnackBarExampleTimer: React.FC = () => {
   const [items, dispatchItems] = useReducer<
-    React.Reducer<
-      Item[],
-      { type: 'add' | 'remove'; item: Item; key?: number | string }
-    >
+    Item[],
+    [{ type: 'add' | 'remove'; item: Item; key?: number | string }]
   >(reducer, []);
 
   const generateHandleAdd =

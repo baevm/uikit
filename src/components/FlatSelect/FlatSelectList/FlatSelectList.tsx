@@ -62,7 +62,7 @@ type Props<ITEM, GROUP> = PropsWithJsxAttributes<{
   labelForEmptyItems?: string;
   notFound?: boolean;
   hasItemsAtom: AtomMut<boolean>;
-  itemsRefs: React.RefObject<HTMLDivElement>[];
+  itemsRefs: React.RefObject<HTMLDivElement | null>[];
   virtualScroll?: boolean;
   onScrollToBottom?: (length: number) => void;
   valueAtom: AtomMut<ITEM[]>;

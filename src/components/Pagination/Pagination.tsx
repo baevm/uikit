@@ -175,7 +175,7 @@ const PaginationRender = <TYPE extends PaginationPropType>(
             renderArrow(
               outerMostArrows[0],
               'first',
-              refs[0] as unknown as React.RefObject<HTMLButtonElement>,
+              refs[0] as unknown as React.RefObject<HTMLButtonElement | null>,
               undefined,
               handleFirst,
             )}
@@ -183,13 +183,12 @@ const PaginationRender = <TYPE extends PaginationPropType>(
             renderArrow(
               arrows[0],
               'previous',
-              refs[1] as unknown as React.RefObject<HTMLButtonElement>,
+              refs[1] as unknown as React.RefObject<HTMLButtonElement | null>,
               hotKeys?.[0],
               handlePrevious,
             )}
         </>
       )}
-
       {type === 'default' ? (
         <PaginationList
           items={pages}
@@ -223,7 +222,7 @@ const PaginationRender = <TYPE extends PaginationPropType>(
             renderArrow(
               arrows[1],
               'next',
-              refs[2] as unknown as React.RefObject<HTMLButtonElement>,
+              refs[2] as unknown as React.RefObject<HTMLButtonElement | null>,
               hotKeys?.[1],
               handleNext,
             )}
@@ -231,7 +230,7 @@ const PaginationRender = <TYPE extends PaginationPropType>(
             renderArrow(
               outerMostArrows[1],
               'last',
-              refs[3] as unknown as React.RefObject<HTMLButtonElement>,
+              refs[3] as unknown as React.RefObject<HTMLButtonElement | null>,
               undefined,
               handleLast,
             )}

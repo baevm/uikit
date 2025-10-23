@@ -17,9 +17,9 @@ export type ModalProps = PropsWithHTMLAttributes<
     form?: 'brick' | 'default';
     border?: boolean;
     children?: React.ReactNode;
-    container?: HTMLElement | React.RefObject<HTMLElement>;
+    container?: HTMLElement | React.RefObject<HTMLElement | null>;
     afterClose?: () => void;
-    refsForExcludeClickOutside?: React.RefObject<HTMLElement>[];
+    refsForExcludeClickOutside?: React.RefObject<HTMLElement | null>[];
   },
   HTMLDivElement
 >;

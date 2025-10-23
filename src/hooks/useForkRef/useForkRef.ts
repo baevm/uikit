@@ -10,10 +10,11 @@ export const forkRef = <T>(
   }
   return (refValue) => {
     for (const ref of refs) {
-      setRef(ref as React.MutableRefObject<T>, refValue);
+      setRef(ref, refValue);
     }
   };
 };
 
-export const useForkRef = <T>(refs: (React.Ref<T> | undefined)[]) =>
-  useMemo(() => forkRef(refs), refs);
+export const useForkRef = <T>(
+  refs: (React.Ref<T> | undefined)[],
+): React.RefCallback<T> | null => useMemo(() => forkRef(refs), refs);

@@ -7,10 +7,10 @@ type Return<
   T,
   E extends number | string[] | readonly string[],
 > = E extends string[]
-  ? Record<E[number], React.RefObject<T>>
+  ? Record<E[number], React.RefObject<T | null>>
   : E extends readonly string[]
-  ? Record<E[number], React.RefObject<T>>
-  : Array<React.RefObject<T>>;
+  ? Record<E[number], React.RefObject<T | null>>
+  : Array<React.RefObject<T | null>>;
 
 export const useRefs = <
   T,
@@ -21,7 +21,7 @@ export const useRefs = <
 ): Return<T, E> =>
   useMemo(() => {
     if (isNotNumber(elements)) {
-      const obj: Record<string, React.RefObject<T>> = {};
+      const obj: Record<string, React.RefObject<T | null>> = {};
       for (let index = 0; index < elements.length; index++) {
         obj[elements[index]] = createRef<T>();
       }

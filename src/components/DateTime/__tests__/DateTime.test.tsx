@@ -44,7 +44,9 @@ describe('Компонент DateTime', () => {
         it(`добавление аттрибута с помощью ref при type="${type}" view="${view}"`, () => {
           const refAttrName = 'data-test-ref';
           const refAttrValue = 'test-ref';
-          const ref = { current: null } as React.RefObject<HTMLDivElement>;
+          const ref = {
+            current: null,
+          } as React.RefObject<HTMLDivElement | null>;
           renderComponent({ type, view, ref });
           if (ref.current) {
             ref.current.setAttribute(refAttrName, refAttrValue);
