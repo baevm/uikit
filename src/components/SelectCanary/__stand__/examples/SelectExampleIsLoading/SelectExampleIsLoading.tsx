@@ -5,7 +5,6 @@ import { useDebounce } from '##/hooks/useDebounce';
 import { useFlag } from '##/hooks/useFlag';
 
 import { Select } from '../../../SelectCanary';
-
 type Item = {
   label: string;
   id: number;
