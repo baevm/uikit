@@ -19,13 +19,14 @@
     "declaration": true,
     "baseUrl": "./",
     "paths": {
-      "##/*": ["./src/*"]
+      "##/*": ["./src/*"],
+      "##/playwright/*": ["./playwright/*"]
     },
     "plugins": [
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
     ],
     "types": ["@testing-library/jest-dom", "node"]
   },
-  "include": ["src/**/*", "scripts/**/*"],
+  "include": ["src/**/*", "scripts/**/*", "playwright/helpers/**/*"],
   "exclude": ["node_modules", "**/node_modules/*"]
 }

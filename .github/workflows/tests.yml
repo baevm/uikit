@@ -43,3 +43,8 @@ jobs:
         run: yarn run lint
       - name: Проверка орфографии
         run: yarn cspell --no-progress
+
+      - name: Установка Playwright зависимостей
+        run: yarn test:visual:install
+      - name: Playwright скриншотные тесты
+        run: yarn test:visual:docker
