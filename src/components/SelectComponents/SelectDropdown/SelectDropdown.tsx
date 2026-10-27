@@ -73,7 +73,7 @@ type Props<ITEM, GROUP> = PropsWithJsxAttributes<{
   itemsRefs: React.RefObject<HTMLDivElement>[];
   virtualScroll?: boolean;
   onScrollToBottom?: (length: number) => void;
-  viewportRef?: React.RefObject<HTMLElement>;
+  viewportRef?: React.RefObject<HTMLElement | null>;
   container?: Element;
 }>;
 
